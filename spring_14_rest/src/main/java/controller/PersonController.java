@@ -47,7 +47,8 @@ public class PersonController {
 	}//end listMethod
 	
 	//http://127.0.0.1:8090/rest/person/list/2/이영희
-/*
+	
+/* 아래 3개는 다 같은 의미. 비교한번해봐.
 	@RequestMapping(value="/list/{num}/{name}", method=RequestMethod.GET)
 	public @ResponseBody PersonDTO listMethod(@PathVariable("num") int num, @PathVariable("name") String name){
 		PersonDTO dto=new PersonDTO();
@@ -56,10 +57,16 @@ public class PersonController {
 		return dao.list(dto);
 	}//end listMethod()
 */	
-	
-	@RequestMapping(value="/list/{num}/{name}", method=RequestMethod.GET)
+/*	
+ 	@RequestMapping(value="/list/{num}/{name}", method=RequestMethod.GET)
 	public @ResponseBody PersonDTO listMethod(PersonDTO dto){
 		return dao.list(dto);
+	}//end listMethod()
+*/
+	@RequestMapping(value="/list/{num}/{name}", method=RequestMethod.GET)
+	public ResponseEntity<PersonDTO> listMethod(PersonDTO dto){
+		ResponseEntity<PersonDTO> entity=new ResponseEntity<PersonDTO>(dao.list(dto),HttpStatus.OK);
+		return entity;
 	}//end listMethod()
 	
 /*
@@ -68,14 +75,8 @@ public class PersonController {
  * 	type:'POST',
  * 	data: JSON.stringify({"id":"user","pass":"4253","name":"야옹이"}),
  * 	url:'/'
- * }) 
- * 
- * 
- * 
- * 
+ * })  
  */	
-	
-	
 	
 	//http://127.0.0.1:8090/rest/person/
 	@RequestMapping(value="/", method=RequestMethod.POST)
