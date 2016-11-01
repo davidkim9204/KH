@@ -1,0 +1,47 @@
+li {
+	list-style: none;
+}
+
+#cinematic{
+	width: 998px;
+	margin: 0px auto;
+	border: 1px solid black;
+
+	/* fixed */
+/* 	border: 1px solid black;	 */
+}
+
+	
+/* #cinematic h1{
+	text-align: center;
+	color: blue;
+	font-size: 24px;
+} */
+
+#cinematic_video{
+	text-align: center;
+}
+
+
+#cinematic ul{
+	width: 1000px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+#cinematic ul li{
+	width: 160px;
+	/* fixed */
+	text-align: right;
+	margin: 10px auto;
+	float: left;
+	overflow: hidden;
+	
+}
+
+li iframe{
+	display: none;
+}
+
+

@@ -62,6 +62,20 @@ public class PersonController {
 		return dao.list(dto);
 	}//end listMethod()
 	
+/*
+ * $.ajax({
+ * 	dataType:"text",
+ * 	type:'POST',
+ * 	data: JSON.stringify({"id":"user","pass":"4253","name":"야옹이"}),
+ * 	url:'/'
+ * }) 
+ * 
+ * 
+ * 
+ * 
+ */	
+	
+	
 	
 	//http://127.0.0.1:8090/rest/person/
 	@RequestMapping(value="/", method=RequestMethod.POST)
