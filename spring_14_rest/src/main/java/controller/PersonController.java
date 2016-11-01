@@ -2,8 +2,11 @@ package controller;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -59,6 +62,20 @@ public class PersonController {
 		return dao.list(dto);
 	}//end listMethod()
 	
+	
+	//http://127.0.0.1:8090/rest/person/
+	@RequestMapping(value="/", method=RequestMethod.POST)
+	public ResponseEntity<String> insertMethod(@RequestBody PersonDTO dto){
+		ResponseEntity<String> entity = null;
+		try{
+			dao.register(dto);
+			entity=new ResponseEntity<String>("SUCCESS",HttpStatus.OK);
+		}catch(Exception e){
+			e.printStackTrace();
+			entity= new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
+		}
+		return entity;
+	}//end insertMethod()
 	
 	
 }//end class
