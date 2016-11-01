@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>script_024_dom_html_value</title>
+<style type="text/css">
+#dv {
+	width: 100px;
+	height: 100px;
+	border: 1px solid black;
+}
+</style>
+<script type="text/javascript">
+	
+</script>
+
+</head>
+<body>
+	<input type="text" name="data" id="data" /> <!-- input은 value를 가지고 있지만 div는 가지고 있지 않다. -->
+	<div id="dv"></div>
+	
+	<script type="text/javascript">
+	document.getElementById("data").value="value속성"; //value속성 있을때
+	//document.getElementById("dv").innerHTML="<p>HTML</p>";
+	document.getElementById("dv").innerText="<p>Text</p>"; //요소로 인식을 하지 않고 text로 인식한다.
+	 
+	</script>
+</body>
+</html>

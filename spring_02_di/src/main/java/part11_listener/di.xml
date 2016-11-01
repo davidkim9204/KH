@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 
+prn메소드 실행하기 전에 먼저 실행하고 싶은 메소드를 정의
+init-method="메소드명" 
+-->
+
+<!-- 
+init-method : 빈객체를 컨테이너에 생성 및 초기화가 끝난 후 호출되는 메소드를 지정한다.
+destory-method : 빈객체가 컨테이너에서 소멸이 되기 전에 호출되는 메소드를 지정한다.
+				 컨테이너를 소멸시키지 않으면 출력 X
+-->
+	<bean id="svc" class="part11_listener.ServiceImp" init-method="before" destroy-method="end">
+		
+	</bean>
+</beans>

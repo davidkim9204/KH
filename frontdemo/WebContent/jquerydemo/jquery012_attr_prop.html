@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery012_attr_prop</title>
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function(){
+	$('button').bind('click',function(){
+		/*
+		attr(): HTML의 Attribute  값(내용) 그 자체를 갖고 올 때 사용. 		 정적요소속성
+		prop(): 속성을 바꾸거나 비교할때.					      	   	  동적요소속성(javascript이용해서 요소 추가할 때 넣어준 속성.)
+		*/
+		
+	//	alert($('a').attr('href'));
+	//	alert($('a').prop('href'));
+		alert($('input').attr('checked'));
+		alert($('input').prop('checked'));
+	
+	
+	});
+	
+	
+})
+
+</script>
+</head>
+<body>
+<button id="btn">commit</button>
+<a href="jquery001_cdn.html">첫페이지</a>
+<input type="checkbox" checked="checked" />
+
+</body>
+</html>

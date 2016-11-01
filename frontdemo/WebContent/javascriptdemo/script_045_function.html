@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>script_045_function</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<script type="text/javascript">
+/*
+
+재귀함수 호출
+ 
+ */
+ //무슨 목적으로 호출하는지 위치를 잘 잡아야 한다.
+ var num=0;
+ function testFun(){ 
+	 num++;
+	 document.write(num+"<br/>");
+	 if(num==10)return;
+	 testFun(); //처음으로
+	 document.write("==="+num+"===<br/>");
+	 
+ }
+ 
+ testFun();
+</script>
+
+</body>
+</html>

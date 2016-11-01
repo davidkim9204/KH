@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>script_011_Global_eval</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+<script type="text/javascript">
+//eval(String): 수식의 결과를 리턴, 문자열을 수식으로 리턴
+var data=eval("3+2");
+document.write(data+"<br/>");//5
+
+data=eval("3"+"2");
+document.write(data+"<br/>"); //"3"+"2"=32
+
+data=eval("3")+eval("2");
+document.write(data+"<br/>"); //5
+
+//배열인 경우
+var arr='[1,2,3,4,5]';
+data=eval(arr);
+document.write(data+"<br/>"); // 1,2,3,4,5
+document.write(arr+"<br/>"); //[1,2,3,4,5]
+
+
+//객체로 바꿔주는 역할
+var obj='{"one":"java","two":"jsp"}'; //" "없어도 처리가능
+data=eval("("+obj+")");
+document.write(obj+"<br/>"); //{"one":"java","two":"jsp"}
+document.write(data+"<br/>"); //[object Object] //뒤는 데이터 타입을 의미하는 것만 같아,,,
+document.write(data.one+","+data.two+"<br/>");
+
+
+</script>
+</body>
+</html>

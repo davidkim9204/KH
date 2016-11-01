@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		var fruits = [ "Banana", "Orange", "Apple", "Mango"];
+		//array->string
+		document.write(typeof fruits.toString() + "<br/>");
+		document.write(typeof String(fruits) + "<br/>");
+
+		document.write(fruits.join() + "<br/>"); //Banana,Orange,Apple
+		document.write(typeof fruits.join() + "<br/>");
+		document.write(fruits.join(" * ") + "<br/>"); //Banana * Orange
+		document.write(typeof fruits.join(" * ") + "<br/>");//string
+		document.write("<hr/>");
+		
+		document.write(fruits.push("Kiwi")+"<br/>"); //5
+		document.write(fruits+"<br/>");
+		document.write(fruits.pop()+"<br/>"); //Kiwi
+		document.write(fruits+"<br/>"); //Banana
+		document.write("<hr/>");
+		
+		document.write(fruits.unshift("Kiwi")+"<br/>"); 
+		document.write(fruits+"<br/>");
+		document.write(fruits.shift()+"<br/>"); //Kiwi
+		document.write(fruits+"<br/>");
+		document.write("<hr/>");
+		
+		var fruits2=["Banana","Orange","Apple","Mango"];
+		//2 인덱스부터 1개를 삭제하고 "Lemon","Kiwi"데이터를 추가한다.
+		fruits2.splice(2,1,"Lemon","Kiwi");
+		document.write(fruits2+"<br/>");
+			
+		var myGirls=["Cecilie","Lone"];
+		var myBoys=["Emil","Tobias","Linus"];
+		document.write(myGirls.concat(myBoys)+"<br/>");
+		document.write("<hr/>");
+		
+		document.write(fruits2.sort()+"<br/>");
+		document.write(fruits2+"<br/>");
+	//	document.write(fruits2.sort(function(a,b){return b-a})+"<br/>");
+		document.write(fruits2.sort().reverse()+"<br/>");
+		document.write("<hr/>");
+		
+		var point=[40,100,1,5,10];
+		document.write(point+"<br/>"); //40 100 1 5 10
+		document.write(point.sort()+"<br/>"); //1,10,100,40,5
+	
+		//1,5,10,40,100
+		document.write(point.sort(function(a,b){return a-b})+"<br/>");
+		
+		//100,40,10,5,1
+		document.write(point.sort(function(a,b){return b-a})+"<br/>");
+		document.write("<hr/>");
+		
+		var data=new Array(1,2,3);
+		function getSum(total,num){
+			return total +num;
+		}
+		document.write(data.reduce(getSum)+"<br/>");
+		
+		
+		
+	</script>
+
+</body>
+</html>

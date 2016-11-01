@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_032_test</title>
+<style type="text/css">
+
+/*전체 가로1000 세로 800*/
+* {
+	
+}
+
+body {
+	width: 1000px;
+	height: 800px;
+	margin: 0 auto;
+}
+div.top {
+	width: 1000px;
+	height: 100px;
+	background-color: yellow;
+}
+
+div.register{
+	width: 1000px;
+	height: 20px;
+	background-color: orange;
+	margin-bottom: 10px;
+
+}
+
+div.menu{
+	width: 1000px;
+	height: 70px;
+	background-color: purple;
+
+}
+
+
+
+div.left {
+	width: 150px;
+	height: 600px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;
+	background-color: blue;
+}
+
+div.right {
+	width: 150px;
+	height: 600px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;
+	background-color: red;
+}
+
+div.main {
+	width: 680px;
+	height: 600px;
+	margin: 10px;
+	float: left;
+	background: white;
+}
+
+div.m1 {
+	width: 680px;
+	height: 400px;
+	margin-bottom: 10px;
+	float: left;
+	background: black;
+}
+
+div.m2 {
+	width: 680px;
+	height: 190px;
+	float: left;
+	background: aqua;
+}
+
+div.bottom {
+	width: 1000px;
+	height: 100px;
+	float: left;
+	background: olive;
+}
+
+#main_aside {
+	width: 200px;
+	float: left;
+}
+
+/*탭모양 구성*/
+div.buttons{
+overflow:hidden;
+}
+
+div.buttons>label{
+display: block;
+width: 100px;
+height: 30px;
+float:left;
+background-color: black;
+line-height: 30px;
+text-align: center;
+border: 1px solid black;
+box-sizing: border-box;
+color: white;
+}
+
+</style>
+</head>
+<body>
+
+	<div class="top">
+		<div class="register">register</div>
+		<div class="menu">
+			<div id="main_aside">
+				<input id="first" type="radio" name="tab" checked="checked" />
+				<input id="second" type="radio" name="tab" />
+				<input id="third" type="radio" name="tab" />
+				<input id="fourth" type="radio" name="tab" />
+			<div class="buttons">
+				<label for="first">First</label> 
+				<label for="second">Second</label>
+				<label for="third">Third</label>
+				<label for="fourth">Fourth</label>
+				
+			</div>
+		</div>
+		</div>
+	</div>
+	<div id="wrap">
+		<div class="left">left</div>
+		<div class="main">
+			<div class="m1">m1</div>
+			<div class="m2">m2</div>
+		</div>
+		<div class="right">right</div>
+	</div>
+	<div class="bottom">bot</div>
+</body>
+</html>

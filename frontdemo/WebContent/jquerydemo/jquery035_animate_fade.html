@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+/*
+ fadeIn("효과속도",콜백함수);      점점 선명해짐
+ fadeOut("효과속도",콜백함수);     점점 투명해짐
+ fadeToggle("효과속도",콜백함수);  투명 & 불투명
+ fadeTo("효과속도",투명도,콜백함수);
+ 	=> 투명도는 0부터 1까지 지정한다. 1에 가까울수록 선명해짐
+ 	  ex) 50% = 0.5를 입력한다.
+ */
+$(document).ready(function(){
+	$('#btnin').click(function(){
+		$('img').fadeIn('normal');
+		$('img').slideUp(3000);
+	});
+	
+	$('#btnout').click(function(){
+		$('img').fadeOut(3000);
+		
+	});
+	
+	$('#btntoggle').click(function(){
+		$('img').fadeToggle('slow');
+	});
+	
+	$('#btnope').click(function(){
+		$('img').fadeTo(3000,0.3);
+	});
+	
+});
+</script>
+</head>
+<body>
+
+<button id="btnin">fadein</button>
+<button id="btnout">fadeout</button>
+<button id="btntoggle">fadetoggle</button>
+<button id="btnope">투명도(30%)</button><br/>
+<img src="images/aa.jpg"/>
+</body>
+</html>

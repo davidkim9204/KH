@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_015_background</title>
+<style type="text/css">
+*{
+border:0;
+margin:0;
+padding:0;
+}
+
+.dv1{
+background-color:yellow;
+width:100px;
+height:100px;
+}
+
+
+.dv2{
+width:500px;
+height:500px;
+background-color:blue;
+background-image: url('./images/aa.jpg');
+background-repeat: no-repeat;
+}
+
+.dv3{
+width:300px;
+height:300px;
+border: 2px solid black;
+background-image: url('./images/pg.jpg');
+background-repeat: no-repeat;
+/*background-position: center;*/
+/*background-position: right bottom;*/
+/*background-position: center bottom;*/
+/*background-position: 100px -200px;*/
+background-position: 100px bottom;
+
+background:#ff0000 url('./images/aa.jpg') center no-repeat
+}/*속성을 여러개 적용할때는 순서를 지켜야한다. 한꺼번에 쓸때는홈페이지가면 순서가있다.*/
+
+.dv4{
+width:300px;
+height: 100px;
+background-color: #ff0000;
+background-repeat: no-repeat;
+background-image: url('./images/aa.jpg');
+
+}
+
+
+</style>
+</head>
+<body>
+	<div class="dv1">&nbsp;</div>
+	<div class="dv2">&nbsp;</div>
+	<div class="dv3">&nbsp;</div>
+	<div class="dv4">&nbsp;</div>
+</body>
+</html>

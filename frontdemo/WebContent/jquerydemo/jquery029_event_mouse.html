@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+width:100px;
+height: 200px;
+border: 1px solid black;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+	$(document).ready(function(){
+		//창이 뜨는 타이밍이 다름. down은 누르고 있을 때 뜨고 up은 땠을 때 뜸.	
+		/*  $('div').mousedown(function(){
+				alert('mousedown');
+			});  */
+			
+			 $('div').mouseup(function(){
+				alert("mouseup");
+			}); 
+	});
+
+</script>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery020_imageList</title>
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+
+$(document).ready(function(){
+	var imgList=['pic_t1.jpg','pic_t2.jpg','pic_t3.jpg','pic_t4.jpg',
+	             'pic_t5.jpg','pic_t6.jpg','pic_t7.jpg','pic_t8.jpg'];
+
+$.each(imgList,function(index, value){
+	$('ul').append("<li><img src='images/"+value+"'/></li>");
+	
+});
+//20번은 따로 받을 것.
+});
+
+</script>
+</head>
+<body>
+<ul>
+
+</ul>
+</body>
+</html>

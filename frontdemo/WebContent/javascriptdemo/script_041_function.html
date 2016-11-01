@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>script_041_function</title>
+<style type="text/css">
+
+</style>
+
+
+<script type="text/javascript">
+
+</script>
+</head>
+<body>
+
+<script type="text/javascript">
+/*
+ function 함수명(){
+	실행 문장;
+}
+
+//익명함수를 선언하고 변수에 참조시킨다.
+var 참조변수=function(){실행문장};
+호출 : 참조변수()
+ */
+ 
+ var i=0;
+ function myFun(){
+	 i++;
+	 document.write("hello"+i);
+ }
+ 
+ var test=function(x){return "hello="+x; };
+ var process=function(x){document.write("hello"+x);};
+ 
+ 
+myFun(); //함수호출
+document.write("<hr/>");
+document.write(myFun); //함수 그대로 리터널값으로 출력
+document.write("<hr/>");
+document.write(test);
+document.write("<hr/>");
+document.write(test(10)); //함수에 매개변수가 있을경우 10을 넘겨줌
+document.write("<hr/>");
+process(20);
+</script>
+
+</body>
+</html>
+
+
+
+
+
+

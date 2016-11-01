@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>script_023_dom_nodeType</title>
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+	<!--  인접관계선택자를 이용해서 다른 노드를 접근할때는 IE8번전 이하와 
+그 밖의 브라우져 (파이어폭스,크롬,사파리)등에서는 공백문자의 인식여부 차이가 있다. 
+이를 해결하기위해서 nodeType,nodeName,nodeValue를 이용한다. 
+[노드타입의 종류] 
+				nodeType		nodeName		nodeValue
+element(요소)노드		1			요소명			null
+attribute(속성)노드	2			속성명			속성값
+text(텍스트)노드		3			#text			문자열
+-->
+
+	<div id="wrap">
+		<p>content1</p>
+		<p>content2</p>
+		<span><a href="#">이동</a></span>
+	</div>
+	<script type="text/javascript">
+		var pNode = document.getElementsByTagName[1];
+		document.write(pNode.nodeType + "," + pNode.nodeName + ","
+				+ pNode.nodeValue);
+		
+
+		var pFirstNode = pNode.firstChild;
+		document.write(pFirstNode.nodeType + "," + pFirstNode.nodeName + ","
+				+ pFirstNode.nodeValue + "<br/>");
+
+		var fNode = pNode.previousSibling;
+		while (true) {
+			if (fNode.nodeType == 1) {
+				document.write(fNode.firstChild.nodeValue + "<br/>");
+				break;
+			} else {
+				fNode = fNode.previousSibling;
+			}
+		}
+	</script>
+
+</body>
+</html>

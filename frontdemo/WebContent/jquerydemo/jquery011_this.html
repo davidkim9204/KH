@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery011_this</title>
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function(){
+	//버튼에서 클릭이 발생하면
+	$('button').bind('click',function(){
+		//alert(this +"," +$(this));
+		//소스마다 쓸때가 있음 다르게, 그냥 가져오면 dom이고 $로 가져오면 jquery, jquery에서 활용을 못한다. object로 바꿔야함.
+		
+		alert(this.parentNode+","+$(this).parent());
+		//alert(this.parentNode.nodeName);
+		//alert($(this).parent()[0].nodeName);
+	});
+});
+</script>
+</head>
+<body>
+<button id="btn">commit</button>
+</body>
+</html>

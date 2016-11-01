@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+<form name="frm" action="#" method="get">
+ 
+
+ <textarea cols="20" rows="3">
+ n today's market, there are many frameworks (tools or libraries) designed to extend HTML.
+
+Most of these frameworks manipulate HTML, CSS or JavaScript in a way that makes them difficult to use (especially when used in combination).
+
+AppML is different. You have full HTML, CSS, and JavaScript freedom.
+
+AppML makes it easy to create Single Page Applications (SPA) in a very clean and efficient way.
+
+Even if you have never worked with web development before, you will find AppML very easy to use.
+
+If you are an experienced web developer, you will soon discover the power of AppML.
+ 
+ </textarea>
+<br/>
+<input type="checkbox" name="agree" />약관에 동의합니다.<br/>
+
+
+<input type="checkbox" name="allCheck" id="allCheck">전체선택<br/>
+<input type="checkbox" name="subject1" id="subject1">과목1<br/>
+<input type="checkbox" name="subject2" id="subject2">과목2<br/>
+<input type="checkbox" name="subject3" id="subject3">과목3<br/>
+<input type="submit" value="commit" />
+</form>
+
+<!-- 
+폼요소에서  checked속성
+1. 체크박스와 라디오버튼에서 체크 상태값을 반환하거나 또는 체크 여부를 제어할 수 잇다.
+2. 체크가 되어 있으면 true 안되어 있으면 false를 리턴한다.
+
+ -->
+
+<script type="text/javascript">//name에서 가져온것.
+ document.frm.allCheck.onclick=function(){
+	if(this.checked){
+		document.frm.subject1.checked=true;
+		document.frm.subject2.checked=true;
+		document.frm.subject3.checked=true;
+	}else{
+		document.frm.subject1.checked=false;
+		document.frm.subject2.checked=false;
+		document.frm.subject3.checked=false;
+	}
+	 
+ };
+ 
+ 
+ document.frm.onsubmit=function(){
+	var agree=document.frm.agree;
+	if(agree.checked==false){
+		alert("약관에 동의해야 합니다.");
+		return false;
+	}
+	 
+ };
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+	
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+		var data = "It\'s alright";
+		document.write(data + "<br/>");
+
+		var data2 = "Hello \
+ Dolly";
+
+		document.write(data2 + "<br/>");
+
+		document.write(data2.length + "<br/>");
+
+		/*
+		특정범위 데이터를 리턴해주는 3가지 메소드
+		1.slice(start, end) //얘는 두가지를 사용할때가 있다?
+		2.substring)(start,end);
+		3.substr(start,length);
+		 */fff
+
+		var str = "Apple, Banana, Kiwi";
+		//7인뎃으부터 13미만 인덱스까지
+		document.write(str.slice(7, 13) + "<br/>")
+		document.write(str.slice(-12, -6) + "<br/>");
+		document.write(str.substring(7, 13) + "<br/>");
+		//substring()은 음수값을 지원안한다.
+		document.write(str.substring(-12, -6) + "<br/>");//substring은 -면 결과값이 안나온다.
+		document.write(str.substr(7, 6) + "<br>/");
+
+		//str = "Please visit Microsoft! and Microsoft\r\nMicrosoft";
+		//줄바꿈을 원한다면
+		str = "Please visit Microsoft! and Microsoft\<br\>Microsoft";
+		document.write(str.replace("Microsoft", "W3Schools") + "<br/>");
+		//i 대소문자 구분안함 g 여러번 반복
+		document.write(str.replace(/Microsoft/ig, "W3Schools") + "<br/>");
+
+		var text1 = "Hello World";
+		document.write(text1.toUpperCase() + "<br/>");
+		document.write(text1.toLowerCase() + "<br/>");
+
+		var text2 = "javascript";
+		document.write(text1.concat(" ", text2) + "<br/>");
+
+		var str2="HELLO WORDL";
+		document.write(str2.charAt(0)+"<br/>"); //H
+		//아스키 코드값으로 리턴
+		document.write(str2.charCodeAt(0)+"<br/>"); //72
+		document.write(str2[0]+"<br/>"); //H
+		
+		var txt="a,b,c,d,e"; //string
+		var arr=txt.split(","); //string ->array
+		document.write(arr[1]+"<br/>");
+		for(var index in arr) //index를 가져온다.
+			document.write(arr[index]+"<br/>")
+			//for(char num : arr)
+		var txt2="hijklmn";
+		var arr2=txt2.split("");
+		for(var index in arr) 
+			document.write(arr2[index]+"<br/>")
+				
+			
+		var str3 = "The rain in SPAIN stays mainly in the place";
+		var res = str3.match(/ain/g);
+		//검색데이터와 일치하는 문자열이 없으면 null을 반환
+		document.write(res+"<br/>");
+		
+		res=str3.search("ain");
+		//검색데이터와 일치하는 문자열이 없으면 -1을 리턴
+		document.write(res+"<br/>");
+		
+		document.write("<hr/>");
+		var data=10;
+		document.write(typeof data+","+typeof String(data)+"<br/>");
+		
+		
+	</script>
+</body>
+</html>

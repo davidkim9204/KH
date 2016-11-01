@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>css_004_selector</title>
+<style type="text/css"> /*속성중 class속성에 unit값이 설정된 요소에 스타일을 적용한다.*/
+p.unit {
+	background-color: yellow
+}
+
+/*p요소 자손 요소 중에  class속성에 unit값이 설정된 요소에 스타일을 적용한다.*/
+
+p .unit { /*자손 p자손중에*/
+	background-color: aqua
+}
+</style>
+
+
+</head>
+<body>
+	<p>
+		<span class="unit">p요소의 자손요소인 span요소에 설정된 class속성</span>
+	</p>
+
+	<p class="unit">p요소에 설정된 class속성</p>
+
+</body>
+</html>

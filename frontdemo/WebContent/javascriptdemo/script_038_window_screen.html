@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#wrap{
+  width:1000px;
+  height:800px;
+  background-color: yellow;
+  margin:auto;
+}
+
+#pop{
+  width:200px;  
+  height:200px;
+  background-color: gray;
+  position: absolute;
+}
+</style>
+
+<script type="text/javascript">
+window.onload=function(){
+	   
+	var a = document.getElementById("wrap");
+	var b = document.getElementById("pop");
+
+	var x= (document.body.offsetWidth/2)-(pop.offsetWidth/2);
+	var y= (document.body.offsetHeight/2)-(pop.offsetHeight/2);
+
+	b.style.left=x+'px';
+	b.style.top=y+'px'; 
+
+	}
+</script>
+</head>
+<body>
+
+
+ <div id="wrap"></div>
+ 
+ <div id="pop" >
+  <button> 닫기</button>
+ </div>
+</body>
+</html>
+
+
+
+
+
+

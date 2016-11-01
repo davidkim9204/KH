@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery010_object</title>
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function(){
+	//dom으로 가져올땐 어던 요소를 가지고 오냐 따라서 약간씩 달라진다.
+	var btnNode=document.getElementById("btn");
+	
+	var btnEle=$('#btn');
+	//dom->jQuery
+	document.write(btnNode+","+btnEle+"<br/>");
+	
+	//jQuery->dom
+	document.write($(btnNode)+","+btnEle[0]+"<br/>");
+	
+	
+	
+});
+
+</script>
+</head>
+<body>
+<button id="btn">commit</button>
+
+</body>
+</html>

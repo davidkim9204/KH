@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function(){
+	$('#btnup').click(function(){
+		$('img').slideUp('normal');
+	});
+	
+	$('#btndown').click(function(){
+		$('img').slideDown('fast');
+	});
+	
+	$('#btntoggle').click(function(){
+		$('img').slideToggle('slow');
+	});
+	
+});
+</script>
+</head>
+<body>
+
+<button id="btnup">slideup</button>
+<button id="btndown">slidedown</button><br/>
+<button id="btntoggle">slidetoggle</button><br/>
+<img src="images/aa.jpg"/>
+
+</body>
+</html>

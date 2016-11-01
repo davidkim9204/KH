@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+var arr = [ [ "불고기", "삼계탕", "비빔밥" ], [ "짜장면", "짬뽕", "탕수육" ],
+			[ "회덮밥", "덴뿌라", "우동" ] ];
+</script>
+</head>
+<body>
+<select id="menu" name="menu" onchange="process(this)">
+		<option value="">메뉴선택</option>
+		<option value="m1">한식</option>
+		<option value="m2">중식</option>
+		<option value="m3">일식</option>
+	</select>
+
+	<select id="sub" onchange="order()">
+		<option value="">음식선택</option>
+
+	</select>
+</body>
+</html>

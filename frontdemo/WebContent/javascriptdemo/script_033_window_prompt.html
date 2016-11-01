@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+window.onload=function(){
+	var btn=document.getElementById("btn");
+	var replay=document.getElementById("replay")
+	btn.onclick=function(){
+		//prompt("질의내용","기본 답변")
+		var data=window.prompt("현재의 위치는?");
+		replay.innerHTML()=data;
+	}
+	
+	exit.onclick=function(){
+		var chk=window.confirm("정말로 종료하겠습니다");
+		if(chk)
+			window.close();
+	}
+}
+</script>
+</head>
+<body>
+<button id="btn"> click </button>
+<p id="replay"> </p> 
+<button id="exit">exit</button>
+</body>
+</html>

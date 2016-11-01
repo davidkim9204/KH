@@ -1,0 +1,23 @@
+웹 프로그램
+1.frontend(client)-HTML, CSS, JavaScript, Ajax, Json,XML
+2.backend(server) - servlet, jsp, spring
+
+웹문서 3대 구성
+
+HTML - 문서구조
+CSS -표현언어 스타일 폰트 색 박스 색같은 것들
+JavaScript - 동적으로 작동시킬때 , 동작
+
+HTML4 - > XHTML1.0 - > HTML5
+
+정의한 dtd가 다르다.
+<html>
+ <head>
+ </head>
+ <body>
+ </body>
+</html>
+
+
+태그=요소=엘리먼트..
+

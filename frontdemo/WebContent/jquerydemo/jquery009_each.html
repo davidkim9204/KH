@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery009_each</title>
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script>
+$(document).ready(function(){
+	var arr=[10,20,30,40];
+	/*for(var i in arr)
+		document.write(arr[i]+"<br/>");*/
+	
+	$('ul li').each(function(index, value){
+		$(value).text("리스트"+index);
+		
+	});
+	/*
+	$.each('ul li',function(index, value){
+		$(value).text("리스트"+index);
+		
+	});	*/
+		
+	/*
+	$.each(arr,function(index, value){
+		document.write(value+"<br/>");
+		
+	});
+	*/
+	/*
+	$.each($('ul li'),function(index, value){
+		$(value).text("리스트"+index);
+		
+	})
+	*/
+	//value에 요소가 넘어가는지 요소값이 넘어가는지 잘 설정해야 한다.
+	
+	/* $.each(arr,function(value){
+		document.write(value+"<br/>");
+		
+	});
+	
+	$(arr).each(function(index, value){
+		document.write(value+"<br/>")
+	}); */
+	
+	
+	//순서에 따라 무엇이 결정되는지 확인해야한다.
+	//''안은 객체로 만들으란 이야기이다.
+	
+	
+});
+
+</script>
+</head>
+<body>
+<ul>
+<li>content1</li>
+<li>content2</li>
+<li>content3</li>
+</ul>
+</body>
+</html>

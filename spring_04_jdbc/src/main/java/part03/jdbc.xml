@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+
+	<!-- 1. DataSource 빈 선언 -->
+	<!-- datasource빈을 생성하기 위한 첫번쨰 방법 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin://@127.0.0.1:1521:xe" />
+		<property name="username" value="hr" />
+		<property name="password" value="a1234" />	
+	</bean>
+	
+	
+<!-- 	첫번째 방법은 직접 찾아서 일일이 바꿔야 되는데 이 방법은 oracle.properties만 수정하면 모든게 수정됨. -->
+	<!-- datasource빈을 생성하기 위한 두번쨰 방법 -->
+	<context:property-placeholder location="classpath:config/oracle.properties" />
+	<bean id="dataSource2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />	
+	</bean>
+	
+	
+<!-- 	이거 쓰지말고 두번째꺼 써라. 그냥 이런 방법이 있음 -->
+	<!-- datasource빈을 생성하기 위한 세번쨰 방법 -->
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<value>classpath:config/oracle.properties</value>
+		</property>
+	</bean>
+	<bean id="dataSource3" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${jdbc.driver}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />	
+	</bean>
+	
+	
+	
+	<!-- 2. SqlSessionfactoryBean 빈 선언 -->
+	<!-- Spring - ORM 연동 --> 
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		
+		<!--  configuration.xml에 typeallias를 선언해 놓으면 무조건 이방법을 사용해야됨.
+			<property name="conigLocation" value="classpath:config/configuration.xml"/> -->
+		<!-- <property name="mapperLocations" value="classpath*:config/mapper.xml" /> -->
+		<property name="mapperLocations">
+			<list>
+				<value>config/mapper.xml</value>
+				
+			</list>
+		</property>
+		
+	</bean>
+	
+	<!-- 3. SqlSessionTemplate 빈 선언 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg ref="sqlSessionFactory" index="0" />
+	</bean>
+	
+	
+	<!-- 4. MemDaoImp 빈 선언 -->
+	<bean id="dao" class="part03.MemDaoImp">
+		<property name="sqlSessionTemplate" ref="sqlSession" />
+	</bean>
+
+</beans>
