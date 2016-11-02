@@ -22,7 +22,6 @@
 		/* var frm=document.getElementById("frm");
 		frm.setAttribute("action","list.do");
 		frm.submit(); */
-		
 		$('#frm').attr('action', "list.sb").submit();
 	}
 
@@ -79,7 +78,8 @@
 															<!-- substringBefore은 인덱스 이전까지 출력 -->
 					<a href="contentdownload.sb?num=${dto.num}">${fn:substringAfter(dto.upload,"_")}</a>
 					<%-- <a href="contentdownload.sb?num=${dto.num}">${dto.upload}</a> --%>
-				</c:if> <c:if test="${empty dto.upload }">
+				</c:if> 
+					<c:if test="${empty dto.upload }">
 					<c:out value="첨부파일 없음" />
 				</c:if></td>
 		</tr>

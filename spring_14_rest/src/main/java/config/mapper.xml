@@ -20,4 +20,13 @@
 		insert into person values(per_num_seq.nextval,#{id},#{pass},#{name})
 	</insert>
 	
+	<update id="upt" parameterType="dto.PersonDTO">
+		update person set name=#{name} where num=#{num}
+	</update>
+	
+	<delete id="del" parameterType="int">
+		delete from person where num=#{num}
+	</delete>
+	
+	
 </mapper>

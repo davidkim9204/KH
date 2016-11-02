@@ -17,7 +17,16 @@ import dto.PersonDTO;
 /*
   
  view 페이지가 필요 없이 그냥 보내지는지 확인하는 용도. 
+ 
+GET(/rest/person/list)					자료의 조회용
+GET(/rest/person/list/3)				자료의 조회용
+DELETE(/rest/person/3)					자료의 삭제
+POST(/rest/person/)+데이터				자료의 등록
+PUT(/rest/person/update)+데이터			자료의 수정
 
+@PathVariable-URI의 경로에서 원하는 데이터를 추출하는 용도로 사용
+@RequestBody - 전송된 JSON데이터를 객체로 변환해 주는 어노테이션으로 
+@ModeAndView와 유사한 역할을 하지만 JSON에서 사용된다는 점이 차이
 */ 
 
 @Controller
@@ -90,9 +99,37 @@ public class PersonController {
 			entity= new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
 		}
 		return entity;
-		
-		
 	}//end insertMethod()
+	
+	
+	//http://127.0.0.1:8090/rest/person/update
+	@RequestMapping(value="/update", method=RequestMethod.PUT)
+	public ResponseEntity<String> updateMethod(@RequestBody PersonDTO dto){
+		ResponseEntity<String> entity = null;
+		try{
+			dao.update(dto);
+			entity=new ResponseEntity<String>("SUCCESS",HttpStatus.OK);
+		} catch(Exception e){
+			e.printStackTrace();
+			entity= new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
+		}
+		return entity;
+	}//end updateMethod()
+	
+	//http://127.0.0.1:8090/rest/person/2
+	@RequestMapping(value="/{num}", method= RequestMethod.DELETE)
+	public ResponseEntity<String> deleteMethod(@PathVariable("num") int num){
+		ResponseEntity<String> entity = null;
+		try{
+			dao.delete(num);
+			entity=new ResponseEntity<String>("SUCCESS",HttpStatus.OK);
+		} catch(Exception e){
+			e.printStackTrace();
+			entity= new ResponseEntity<String>(e.getMessage(),HttpStatus.BAD_REQUEST);
+		}
+		return entity;
+	}
+	
 	
 	
 }//end class

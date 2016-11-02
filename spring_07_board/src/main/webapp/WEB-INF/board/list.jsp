@@ -13,8 +13,6 @@
 <input type="submit" id="btnWrite" value="글쓰기"/>
 </form>
 
-
-
 	<div id="bodywrap">
 		<!-- 리스트 출력 -->
 		<table>
@@ -28,7 +26,10 @@
 				<tr>
 					<td width="5%" style="text-align: center">${dto.num}</td>
 					<td width="45%" style="text-align: center">
-					
+						
+						<!-- 제목을 눌렀을 때 view.sb로 가라. currentPage와 num 파라미터를 갖고감.
+						currentPage를 갖고 가는 이유는 view.sb페이지에 리스트를 누르면 그때 갖고 갔던 페이지 번호를 기억하기 위해
+						num을 갖고가는 이유는 제목을 눌렀을 때 번호값이 유일한 값이라 그 글을 불러오기 위해. -->
 						<c:url var="content" value="view.sb">
 						<c:param name="currentPage" value="${pv.currentPage}"/>
 						<c:param name="num" value="${dto.num}"/>
@@ -36,13 +37,11 @@
 					
 					<c:if test="${dto.re_level!=0}">
 							<!-- 이미지파일은 web.xml 에서 서블릿 맵핑 필요함. -->
-							<img src="images/level.gif" width="${35*dto.re_level}"
-								height="15" />
+							<img src="images/level.gif" width="${35*dto.re_level}" height="15" />
 							<img src="images/re.gif" />
 				<!-- 링크 주소를 직접 다 써 줄 수 있지만 너무 길어지니깐 위에 url 설정해주고 그 주소값을 불러서 사용(짧게 사용= 빠르게 처리). -->		
 					</c:if><a href="${content}">${dto.subject}</a>
 					</td>
-						
 					<td width="20%" style="text-align: center">${dto.writer}</td>
 					<td width="5%" style="text-align: center">${dto.readcount}</td>
 				</tr>
@@ -51,7 +50,8 @@
 		
 		<!-- 이전  -->
 		<c:if test="${pv.startPage>1}">
-		<%-- <span><a href="list.sb?currentPage=${pv.startPage-pv.blockPage}">이전</a></span> --%>
+		<!-- 방법1. <span><a href="list.sb?currentPage=${pv.startPage-pv.blockPage}">이전</a></span> --!>
+		<!-- 방법2 -->
 		<c:url var="prePage" value="list.sb">
 		<c:param name="currentPage" value="${pv.startPage-pv.blockPage}"/>
 		</c:url>
@@ -60,10 +60,14 @@
 
 		<!-- 페이지 출력 시작 -->
 		<c:forEach var="i" begin="${pv.startPage}" end="${pv.endPage}">
-			<%-- <c:url var="currPage" value="list.sb">
+			<%-- 
+			<c:url var="currPage" value="list.sb">
 			<c:param name="currentPage" value="${i}"/>
 			</c:url>
-			<a href="${currPage}"><c:out value="${i}"/></a> --%>
+			<a href="${currPage}">
+			<c:out value="${i}"/></a> 
+			--%>
+			
 			<a href="list.sb?currentPage=${i}">${i}</a>
 		</c:forEach>
 		<!-- 페이지 출력 끝 -->

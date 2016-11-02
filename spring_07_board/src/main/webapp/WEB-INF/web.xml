@@ -55,14 +55,13 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	
 	<!-- .sb로 클라이언트가 요청을 하면 boardServlet이름을 찾아서 거기에 정의되어 있는 class를 실행해라 -->	
 	<servlet-mapping>
 		<servlet-name>boardServlet</servlet-name>
 		<url-pattern>*.sb</url-pattern>
 	</servlet-mapping>
 	
-	<!-- 정적 페이지(이미지, )를 맵핑 할 때는 servlet-name은 항상 default로 -->
+	<!-- 정적 페이지에서 이미지파일이나 js파일 등을 사용하기 위해서 맵핑해줘야함. 맵핑 할 때는 servlet-name은 항상 default로 -->
 	<servlet-mapping>
 		<servlet-name>default</servlet-name>
 		<url-pattern>*.css</url-pattern>

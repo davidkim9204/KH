@@ -12,7 +12,7 @@
 	<select id="list" resultType="dto.BoardDTO" parameterType="dto.PageDTO">
 		<!-- <을 문자열 그대로 사용하기 위한 요소 -->
 		<![CDATA[
-		select b.*  from(
+		 select b.*  from(
    		 select rownum as rm, a.*  from(
        	 select * from board order by ref desc, re_step asc)a)b  
  		 where b.rm>=#{startRow} and b.rm<=#{endRow}
@@ -21,12 +21,7 @@
 	
 	<update id="readCount" parameterType="int">
 	update board set readcount=readcount+1 where num=#{num}
-	
 	</update>
-	
-	<select id="content" parameterType="int" resultType="dto.BoardDTO">
-	select * from board where num=#{num}
-	</select>
 		
 	<insert id="save" parameterType="dto.BoardDTO">
 		insert into
@@ -51,6 +46,10 @@
 	update board set re_step=re_step+1 where ref=#{ref} and re_step>#{re_step}
 	]]>
 	</update>
+	
+	<select id="content" parameterType="int" resultType="dto.BoardDTO">
+	select * from board where num=#{num}
+	</select>
 	
 	<select id="uploadFile" parameterType="int" resultType="String">
 	select upload from board where num=#{num}

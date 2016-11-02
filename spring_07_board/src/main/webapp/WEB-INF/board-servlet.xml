@@ -45,11 +45,13 @@
 	</aop:config>
 	
 	<!-- [7] DAO 빈 선언 -->
+	<!-- sqlSession을 사용 하는 곳이 BoardDaoImp -->
 	<bean id = "bdao" class="dao.BoardDaoImp">
 	<property name="sqlSession" ref="sqlSession"/>
 	</bean>
 
 	<!-- [8] Service 빈 선언  -->
+	<!-- BoardDaoImp를 사용하는 곳이 Servie니깐 ref가 BoardDaoImp참조 -->
 	<bean id = "service" class="service.BoardServiceImp">
 	<property name="dao" ref="bdao"/>
 	</bean>
@@ -58,6 +60,13 @@
 	<bean class="controller.BoardController">
 	<property name="service" ref="service"/>
 	</bean>
+	
+	<!-- [10] View 빈 선언 -->
+	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+	<property name="order" value="1"/>
+	</bean>
+	
+	
 	
 	<!-- 파일 업로드 시작 -->
 	<!-- 첨부 파일의 임시기억장치 경로 설정 -->
@@ -76,16 +85,13 @@
 	</bean>
 	<!--  파일 업로드 끝 -->
 	
+	
+	
 	<!-- 다운로드 뷰 선언 -->
 	<bean id="download" class="view.BoardDownLoadView">
 	<property name="dao" ref="bdao"/>
 	</bean>
 	
-	<!-- [10] View 빈 선언 -->
-	
-	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
-	<property name="order" value="1"/>
-	</bean>
 	
 	<!-- InternalResourceViewResolver는 항상 우선순위값을 낮게 설정한다. 높게 설정하면 검색이 중간에 멈추는 경우도 있다 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

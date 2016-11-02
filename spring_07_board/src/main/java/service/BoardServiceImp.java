@@ -106,13 +106,14 @@ public class BoardServiceImp implements BoardService{
 	public void deleteProcess(int num, HttpServletRequest request) {
 		//첨부파일 삭제
 		String upload = dao.getFile(num);
+		//첨부파일이 없으면 첨부파일 삭제
 		if(upload != null){
 			String root = request.getSession().getServletContext().getRealPath("/");
 			String saveDirectory = root + "temp" + File.separator;
 			File fe = new File(saveDirectory, upload);
 			fe.delete();
 		}
-		
+		//첨부파일이 없으면 그냥 번호에 해당하는거 삭제해라.
 		dao.delete(num);
 		
 	}//end deleteProcess()

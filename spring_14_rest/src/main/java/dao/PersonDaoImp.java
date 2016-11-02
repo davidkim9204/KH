@@ -42,13 +42,13 @@ public class PersonDaoImp implements PersonDao{
 
 	@Override
 	public void update(PersonDTO dto) {
-		// TODO Auto-generated method stub
+		sqlSession.update("per.upt",dto);
 		
 	}
 
 	@Override
 	public void delete(int num) {
-		// TODO Auto-generated method stub
+		sqlSession.delete("per.del",num);
 		
 	}
 

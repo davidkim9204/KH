@@ -5,7 +5,7 @@ import java.util.Date;
 import org.springframework.web.multipart.MultipartFile;
 
 public class BoardDTO {
-	private int num, readcount, ref, re_step, re_level;
+	private int num /*번호*/, readcount/*조회수*/, ref/*답변글 찾기 위한 변수*/, re_step/*답변글 순서*/, re_level/*들여쓰기*/;
 	private String writer, email, subject, passwd, content, ip;
 	private Date reg_date;
 
